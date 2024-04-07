@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Lección 02 </title>
+
+    <!--  Importacion del jQuery  -->
+    <script src="js/lib/jquery-3.7.1.min.js"> </script>
+
+    <!--  Importacion del Bootstrap  -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <h1> Selectores y Encadenamiento </h1>
+    <hr>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="img/gato1.jpeg">
+            </div>
+
+            <div class="col-sm-5">
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae possimus quia illo alias
+                    dolorem!
+                    Exercitationem, consequatur corrupti, atque perspiciatis iure quae sit quidem natus reiciendis,
+                    harum
+                </p>
+            </div>
+
+            <div class="col-sm-3">
+                <ul>
+                    <li> Matemáticas </li>
+                    <li> Programación </li>
+                    <li> Análisis </li>
+                    <li> Física </li>
+                    <li> Geografia </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        /*
+        $(function () {
+            $('img')
+                .attr('src', 'img/gato2.jpeg')      //  cambia el src.
+                .removeClass('img-circle')          //  elimina la clase.
+                .addClass('img-thumbnail');         //  añade la clase.
+        });
+        */
+
+        $(function () {
+            $('img')
+                .attr('src', 'img2/profesor.jpeg')      //  cambia el src.
+                //.removeClass('img-circle')          //  elimina la clase.
+                .addClass('img-circle img-thumbnail');         //  añade la clase.
+        });
+
+
+    </script>
+
+</body>
+
+</html>

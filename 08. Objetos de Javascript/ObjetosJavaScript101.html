@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Objetos 101 - JavaScript </title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!--  Importacion de la Hoja de Estilos  -->
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+	<div class="container text-center">
+
+		<h1> Objetos 101 - JavaScript: <small> Comprendiendo lo básico </small></h1>
+		<hr>
+
+		<button id="botonEncender" class="btn btn-primary"> Encender </button>
+		<button id="botonApagar" class="btn btn-danger"> Apagar </button>
+
+	</div>
+
+	<script>
+
+		var carro = {
+			encendido: false,
+			llantas: 4,
+			puertas: 5,
+			fabricante: {
+				creador: "Toyota",
+				telefono: 966747812,
+				direccion: "XYZ Avenida 123"
+			},
+			colores: ["Azul", "Blanco", "Rojo", "Negro"],
+			cilindrada: "150cv",
+
+			arrancar: function () {
+				//console.log("El vehiculo arranco.");
+				if (this.encendido) {
+					console.log("El vehiculo estaba encendido");
+
+				} else {
+					console.log("Encendiendo el motor");
+					this.encendido = true;
+					console.log(this);
+				}
+			},
+
+			apagar: function () {
+				//console.log("El vehiculo esta parado.");
+				if (!this.encendido) {
+					console.log("El vehiculo ya estaba parado");
+
+				} else {
+					console.log("Apagando el motor");
+					this.encendido = false;
+					console.log(this);
+				}
+			}
+
+		};
+
+		/*
+		var fabric = carro.fabricante;
+
+		console.log(fabric.creador);
+		console.log(fabric.direccion);
+		console.log(fabric.telefono);
+
+		fabric.direccion = "Avda Los Pinos";
+		console.log(fabric.direccion);
+		console.log(carro);
+		*/
+
+		//carro.arrancar();
+		//carro.parar();
+
+		$("#botonEncender").on("click", function () { carro.arrancar(); });
+		$("#botonApagar").on("click", function () { carro.apagar(); });
+
+	</script>
+
+</body>
+
+</html>

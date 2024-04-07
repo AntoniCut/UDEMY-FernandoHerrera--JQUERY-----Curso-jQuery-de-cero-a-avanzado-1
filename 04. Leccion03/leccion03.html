@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Lección 03 - Eventos </title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-3.7.1.min.js"> </script>
+
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<style>
+		.img100 {
+			width: 100px;
+			height: 100px;
+		}
+		.divRojo {
+			background-color: red;
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+
+</head>
+
+<body>
+
+
+	<div class="container">
+
+		<h1>Lección 03: Eventos</h1>
+		<hr>
+
+		<button id="boton1" class="btn btn-primary"> Evento click </button>
+		<br> <br>
+		<img src="img/profesor.jpg" class="img100">
+
+		<br> <br>
+		<div class="divRojo">
+
+		</div>
+
+		<br> <br>
+		<a id="linkUdemy" href="https://www.udemy.com" target="_blank"> udemy.com </a>
+
+	</div>
+
+
+	<script>
+
+		$(function () {
+
+			$("#boton1").on("click", function () {
+				//alert("click");
+				console.log("click");
+			});
+
+			$(".img100")
+				.on("mouseenter", function () {				//  cuando el raton entra al elemento.
+					//console.log("entro mouseenter")
+					$(this).attr("src", "img/nophoto.jpg")	//  cambia el atributo src.
+				})
+				.on("mouseover", function () {				//  cuando el raton esta encima del elemento
+					//console.log("entro mouseover")
+				})
+				.on("mouseleave", function () {				//  cuando el raton sale del elemento.
+					//console.log("entro mouseleave")
+					$(this).attr("src", "img/profesor.jpg")	//  cambia el atributo src.
+				});
+
+				$(".divRojo").on("click", function() {
+					console.log("Click en el div rojo");
+
+				});
+
+				//  Controles especiales para links.
+				//  Comportamiento por defecto.
+				$("#linkUdemy").on('click', function (e) {
+					e.preventDefault();		//  impide que el link redireccione.
+					console.log("Click en el link...");
+					
+					var link = $(this).attr("href");	//  obtenemos el atributo href. el this hace referencia al id linkUdemy.
+					console.log(link);
+
+					window.location = link;		//  hacemos la redireccion.
+				});
+
+				$(document).ready(function() {
+					console.log("La página esta lista para lo que sea.");
+				});
+
+
+		});
+
+
+
+	</script>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Presentacion de Vehículo - Tesla Motor </title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-2.1.4.min.js"> </script>
+
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!-- Importacion dela Hoja de Estilos -->
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+	<div class="container text-center">
+
+		<h1> Objetos Prácticos: <small> Ejemplo de vehículo </small> </h1>
+		<hr>
+
+		<div class="divPreloader">
+			<img src="img/loading.gif" class="imgLoader img-responsive">
+		</div> 
+		
+		<div class="divVistaPrevia">
+			<img id="imgCarro" src="img/tesla/modelS-blanco.jpg" class="img-responsive">
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-4 col-sm-5">
+				<select id="cmbColor" class="form-control">
+					<!--  <option value="blanco"> Blanco </option>  -->
+				</select>
+			</div>
+		</div>
+
+	</div>
+
+	<script>
+
+		(function () {
+
+			//  Creamos un Objeto para los colores.
+			var teslaView = {
+
+				colores:['blanco', 'negro'],
+
+				//  Funcion para cambiar el color.
+				cambiarColor: function(img) {
+
+				},
+
+				//  Funcion principal.
+				init: function( opciones) {
+
+					//  Funcion que expande las opciones.
+					$.extend(teslaView, opciones);		//  Pegamos al teslaView las Opciones.
+					console.log(teslaView);
+
+					//  Ciclo para barrer todo el arreglo de colores
+					//  y crear nuestro comboBox (o select).
+					for (var i = 0; i < teslaView.colores.length; i++) {
+
+						var color = teslaView.colores[i];
+
+						//  Creamos un Objeto para crear el elemento <>option>
+						$("<option>", {
+							value: color,
+							text: color
+						}).appendTo("#cmbColor");
+					}
+
+					//  Nueva funcion del cambio.
+					$("#cmbColor").bind("change", function () {
+						var color = $(this).val();
+						var url = "img/tesla/modelS-" + color + ".jpg";
+						$("#imgCarro").attr("src", url);
+					});
+				}
+
+			};
+
+			teslaView.init({
+				colores:['blanco', 'rojo', 'cafe', 'verde', 'rojooscuro', 'negro', 'gris', 'azul'],
+			});
+
+			/*
+			//  Seleccion de Elementos.
+			$("#cmbColor").on("change", function() {
+
+				var color = $(this).val();
+				var url = "img/tesla/modelS-"+color+".jpg";
+
+				$("#imgCarro").attr("src", url);
+
+			});
+			*/
+
+		})();
+
+	</script>
+
+	
+</body>
+
+</html>
+
+

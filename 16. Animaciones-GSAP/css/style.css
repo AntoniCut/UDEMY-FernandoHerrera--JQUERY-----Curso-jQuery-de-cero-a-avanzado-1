@@ -1,0 +1,17 @@
+.cajaAzul{
+	position: relative;
+	width: 50px;
+	height: 50px;
+	background-color: blue;
+	float: left;
+	margin-right: 10px;
+}
+
+.cajaRoja{
+	position: relative;
+	width: 50px;
+	height: 50px;
+	background-color: red;
+	float: left;
+	margin-right: 10px;
+}

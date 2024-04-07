@@ -1,0 +1,17 @@
+
+.slideShow {
+    background-color: red;
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.slideShow ul {
+    display: flex;
+    padding: 0px;    
+    margin-left: 0px;
+    list-style: none;
+}
+
+
