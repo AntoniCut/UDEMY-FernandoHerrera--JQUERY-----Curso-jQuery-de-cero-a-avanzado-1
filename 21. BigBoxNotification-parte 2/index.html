@@ -10,6 +10,8 @@
 	<script src="js/lib/jquery-2.1.4.min.js"></script>
 
 	<!--  <script src="js/lib/TweenMax.min.js"></script>  -->
+	
+	<!--  Importacion de la Libreria gsap  -->
 	<script src="js/lib/gsap.min.js"></script>
 
 	<!-- Importacion del Bootstrap -->
@@ -42,13 +44,26 @@
 		<h1> BigBox: <small> Notification </small> </h1>
 		<hr>
 
+		<button class="btn btn-primary"> Mostrar BigBox </button>
 	</div>
 
 	<script src="js/bigbox.js"> </script>
 
 	<script>
 	
-	$.bigBox();
+		$("button").on("click", function(){
+			
+			$.bigBox({
+				fa:        "fa-codiepie",
+				titulo:    "Desde botón",
+				contenido: "Este es el contenido del bigbox",
+				boton:     "Ingresar a Udemy"
+			}, function(boton){
+				console.log(boton);
+			});
+
+		});
+		
 	
 	</script>
 
