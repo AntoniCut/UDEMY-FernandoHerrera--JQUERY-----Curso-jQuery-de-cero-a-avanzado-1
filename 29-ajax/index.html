@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Inicio desde Ajax </title>
+
+	<!-- Importacion del jQuery y TweenMax-->
+	<script src="js/lib/jquery-3.7.1.min.js"></script>
+	<script src="js/lib/TweenMax.min.js"></script>
+
+	<!--  Importacion de la Hoja de Estilos  -->
+	<link rel="stylesheet" href="css/styles.css">
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+	<!--  Importacion del FontAwesome  -->
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+	<!--  Importacion de SweetAlert  -->
+	<script src="plugins/sweetalert/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="plugins/sweetalert/sweetalert.css">
+</head>
+
+
+<body>
+
+	<div class="container">
+
+		<h1>Inicio - Peticiones Ajax, <small> jquery</small></h1>
+		<hr>
+
+		<div class="text-right">
+			<a href="insert.html" class="btn btn-primary"> <i class="fa fa-plus"> Insertar Registros </i> </a>
+		</div>
+
+		<br><br>
+
+		<table class="table table-striped">
+
+			<thead>
+				<tr>
+					<td class="w-50"> ID </td>
+					<td> Nombre </td>
+					<td class="w-50"> Actualizar </td>
+					<td class="w-50"> Eliminar </td>
+				</tr>
+			</thead>
+
+			<tbody id="tblRegistros">
+				<!--
+				<td> 3 </td>
+				<td> Antonio </td>
+				<td class="text-center"> <a href="" class="btn btn-primary"> <i class="fa fa-edit"> </i> </a> </td>
+				<td class="text-center"> <a data-id="1" href="" class="btn btn-danger"> <i class="fa fa-trash-o"> </i> </a> </td>
+				-->
+			</tbody>
+
+		</table>
+
+	</div>
+
+	<script src="js/select.js"></script>
+
+
+</body>
+
+</html>
